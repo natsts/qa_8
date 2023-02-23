@@ -1,8 +1,5 @@
 import allure
 from allure_commons.types import Severity
-from selene.support.shared import browser
-from selenium.webdriver.chrome.options import Options
-from selenium import webdriver
 from model.page import practice_form
 from utils import attach
 
@@ -10,23 +7,8 @@ from utils import attach
 @allure.tag("web")
 @allure.severity(Severity.NORMAL)
 @allure.label("owner", "natsts")
-def test_practise_form(size_browser):
-    options = Options()
-    selenoid_capabilities = {
-        "browserName": "chrome",
-        "browserVersion": "100.0",
-        "selenoid:options": {
-            "enableVNC": True,
-            "enableVideo": True
-        }
-    }
-    options.capabilities.update(selenoid_capabilities)
-    driver = webdriver.Remote(
-        command_executor="https://user1:1234@selenoid.autotests.cloud/wd/hub",
-        options=options)
-
-    browser.config.driver = driver
-
+def test_practise_form(size_browser, setup_browser):
+    browser = setup_browser
     with allure.step('Ореn practice form'):
         practice_form.open_form()
 
