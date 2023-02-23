@@ -17,7 +17,7 @@ def test_practise_form(size_browser):
         "browserVersion": "100.0",
         "selenoid:options": {
             "enableVNC": True,
-            "enableVideo": False
+            "enableVideo": True
         }
     }
     options.capabilities.update(selenoid_capabilities)
@@ -62,3 +62,4 @@ def test_practise_form(size_browser):
     attach.add_html(browser)
     attach.add_screenshot(browser)
     attach.add_logs(browser)
+    attach.add_video(browser)
