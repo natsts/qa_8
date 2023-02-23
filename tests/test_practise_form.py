@@ -38,7 +38,7 @@ def test_practise_form(size_browser):
         practice_form.select_day('20')
         practice_form.select_subject('English')
         practice_form.select_hobby('Reading')
-        practice_form.add_image('\media\cat.jpg')
+        practice_form.add_image('/media/cat.jpg')
         practice_form.add_address('Moscow')
         practice_form.select_state('NCR')
         practice_form.select_city('Delhi')
