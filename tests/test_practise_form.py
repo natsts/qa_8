@@ -1,14 +1,13 @@
 import allure
 from allure_commons.types import Severity
+from selene.support.shared import browser
+
 from model.page import practice_form
 
 
 @allure.tag("web")
 @allure.severity(Severity.NORMAL)
 @allure.label("owner", "natsts")
-@allure.feature("Issue in repository")
-@allure.story("Issue 'Issue for allure' has in repository")
-@allure.link("https://github.com", name="Testing")
 def test_practise_form(size_browser):
     with allure.step('Ореn practice form'):
         practice_form.open_form()
