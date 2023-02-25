@@ -1,6 +1,6 @@
 {
   "base": {
-    "logo": "",
+    "logo": "logo.png",
     "project": "Project DEMOQA",
     "environment": "some env",
     "comment": "some comment",
